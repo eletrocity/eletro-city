@@ -8,7 +8,7 @@
 <body>
 
   <header>
-    <img src="images/Simbolo.png" alt="Logo Eletro City" class="logo">
+    <img src="images/logo.png" alt="Logo Eletro City" class="logo">
     <nav>
       <ul>
         <li><a href="#sobre">Sobre</a></li>
@@ -22,8 +22,7 @@
   </header>
 
   <section id="banner">
-    <div class="banner-overlay"></div>
-    <img src="images/Backgroun.png" alt="Imagem background">
+    <img src="images/banner.jpg" alt="Imagem de eletricista trabalhando">
     <div class="banner-texto">
       <h1>Bem-vindo à Eletro City</h1>
       <p>Energia, segurança e tecnologia para sua casa ou empresa</p>
@@ -33,10 +32,7 @@
 
   <section id="sobre">
     <h2>Sobre Nós</h2>
-    <p>Somos uma empresa especializada na prestação de serviços elétricos, comprometida com a excelência, segurança e eficiência em cada projeto. 
-      Atuamos com soluções inteligentes para instalações, manutenções e adequações elétricas, sempre prezando pela qualidade dos materiais, 
-      mão de obra qualificada e garantia nos serviços realizados. Nosso objetivo é proporcionar tranquilidade e confiança aos nossos clientes, 
-      entregando resultados com alto padrão técnico e dentro dos prazos estabelecidos</p>
+    <p>A Eletro City é especializada em instalações, manutenções e automação residencial, sempre com foco em segurança e inovação.</p>
   </section>
 
   <section id="servicos">
@@ -53,23 +49,28 @@
     </div>
   </section>
 
-  <section id="feedback">
-    <h2>Feedbacks</h2>
-    <p>Veja o que nossos clientes dizem no Google:</p>
-    <a href="https://share.google/DZH821d4MbIMWgxgs" target="_blank" class="btn-segundo">
-      Avaliações Google
-    </a>
-    <div class="depoimentos">
-      <div class="depoimento">
-        <img src="images/avaliacao1.png" alt="Foto do cliente 1">
-        <p>“Profissinal nota 5/5!”</p>
-        <span>– Érica Lorrana</span>
-        <img src="images/avaliacao2.png" alt="Foto do cliente 2">
-        <p>“Profissinal nota 5/5!”</p>
-        <span>– Mini G</span>
-      </div>
+  
+<section id="feedback">
+  <h2>O que dizem nossos clientes</h2>
+  <div class="carrossel" id="carrossel">
+    <div class="avaliacao">
+      <p>“Um ótimo profissional, serviço de qualidade... Parabéns pelo trabalho 👏🏼👏🏼”</p>
+      <span>— Érica Lorrana</span>
     </div>
-  </section>
+    <div class="avaliacao">
+      <p>“Super indico, um profissional excelente, muito honesto uma pessoa maravilhosa!!! Indico demais!!!!”</p>
+      <span>— Gabriela De Sa</span>
+    </div>
+    <div class="avaliacao">
+      <p>“Profissional comprometido, de extrema confiança e com um trabalho impecável! Dá segurança ter alguém tão responsável e caprichoso cuidando da parte elétrica. Recomendo.”</p>
+      <span>— Mimi G</span>
+    </div>
+  </div>
+  <a href="https://share.google/DZH821d4MbIMWgxgs" target="_blank" class="btn-segundo">
+    Ver mais avaliações no Google
+  </a>
+</section>
+
 
   <section id="fotos">
     <h2>Galeria de Fotos</h2>
@@ -108,6 +109,20 @@
   <footer>
     <p>© 2025 Eletro City • Todos os direitos reservados</p>
   </footer>
+
+
+<script>
+  const avaliacoes = document.querySelectorAll(".avaliacao");
+  let index = 0;
+  function mostrarProximaAvaliacao() {
+    avaliacoes.forEach((el, i) => {
+      el.style.display = (i === index) ? "block" : "none";
+    });
+    index = (index + 1) % avaliacoes.length;
+  }
+  mostrarProximaAvaliacao(); 
+  setInterval(mostrarProximaAvaliacao, 4000);
+</script>
 
 </body>
 </html>
