@@ -1,4 +1,4 @@
-﻿* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #333; }
 header { background: #004080; color: #fff; display: flex; align-items: center; padding: 1rem 2rem; }
 .logo { height: 50px; margin-right: 2rem; }
@@ -34,3 +34,27 @@ form input, form textarea { padding: 0.8rem; border: 1px solid #ccc; border-radi
 form button { background: #004080; color: #fff; padding: 0.8rem; border: none; border-radius: 5px; cursor: pointer; }
 .whatsapp-btn { display: block; text-align: center; margin: 1.5rem auto 0; background: #25d366; color: #fff; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; }
 footer { background: #222; color: #ccc; text-align: center; padding: 1rem 0; font-size: 0.9rem; }
+
+#banner {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.banner-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
