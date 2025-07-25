@@ -33,7 +33,7 @@ form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; 
 form input, form textarea { padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px; }
 form button { background: #004080; color: #fff; padding: 0.8rem; border: none; border-radius: 5px; cursor: pointer; }
 .whatsapp-btn { display: block; text-align: center; margin: 1.5rem auto 0; background: #25d366; color: #fff; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; }
-footer { background: #222; color: #ccc; text-align: center; padding: 1rem 0; font-size: 0.9rem; }
+footer { background: #ffffff; color: #ccc; text-align: center; padding: 1rem 0; font-size: 0.9rem; }
 
 .carrossel {
   position: relative;
