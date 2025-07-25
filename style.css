@@ -44,7 +44,7 @@ footer { background: #222; color: #ccc; text-align: center; padding: 1rem 0; fon
 }
 .avaliacao {
   padding: 1.5rem;
-  background: #004a9e;
+  background: #d3d3d3;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(255, 251, 251, 0.1);
   text-align: center;
@@ -54,7 +54,7 @@ footer { background: #222; color: #ccc; text-align: center; padding: 1rem 0; fon
 .avaliacao span {
   display: block;
   margin-top: 1rem;
-  color: #ffffff;
+  color: #424242;
   font-weight: bold;
 }
 eight: bold;
