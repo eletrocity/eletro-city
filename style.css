@@ -1,61 +1,49 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background: #f9f9f9; color: #333; }
-header { background: #004080; color: #fff; display: flex; align-items: center; padding: 1rem 2rem; }
-.logo { height: 50px; margin-right: 2rem; }
-nav ul { list-style: none; display: flex; gap: 1.5rem; }
-nav a { color: #ffdd00; text-decoration: none; font-weight: bold; }
-#banner { position: relative; text-align: center; color: #fff; }
-#banner img { width: 100%; display: block; }
-.banner-texto { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.banner-texto h1 { font-size: 3rem; }
-.banner-texto p { font-size: 1.2rem; margin: 1rem 0; }
-.btn, .btn-segundo { display: inline-block; background: #ffdd00; color: #004080; padding: 0.7rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; }
-.btn-segundo { background: #004080; color: #ffdd00; }
-section { padding: 4rem 2rem; }
-h2 { text-align: center; margin-bottom: 2rem; color: #004080; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; }
-.card { background: #fff; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-.card img { width: 100%; height: 150px; object-fit: cover; }
-.card h3 { margin: 1rem 0; color: #004080; }
-.depoimentos { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
-.depoimento { background: #fff; padding: 1.5rem; border-radius: 8px; max-width: 300px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-.depoimento img { border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 1rem; }
-.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 1rem; }
-.galeria img { width: 100%; border-radius: 5px; cursor: pointer; transition: transform 0.3s; }
-.galeria img:hover { transform: scale(1.05); }
-.artigos-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; }
-.artigos-lista article { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-.artigos-lista img { width: 100%; height: 140px; object-fit: cover; }
-.artigos-lista h3 { margin: 1rem; color: #004080; }
-.artigos-lista p { margin: 0 1rem 1rem; }
-.artigos-lista a { display: block; margin: 0 1rem 1rem; color: #ff5500; text-decoration: none; font-weight: bold; }
-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-form input, form textarea { padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px; }
-form button { background: #004080; color: #fff; padding: 0.8rem; border: none; border-radius: 5px; cursor: pointer; }
-.whatsapp-btn { display: block; text-align: center; margin: 1.5rem auto 0; background: #25d366; color: #fff; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; }
-footer { background: #222; color: #ccc; text-align: center; padding: 1rem 0; font-size: 0.9rem; }
 
-.carrossel {
+/* === Estilo para desfoque do banner === */
+#banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+#banner .banner-texto {
   position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 2rem auto;
-  overflow: hidden;
+  z-index: 2;
 }
-.avaliacao {
-  padding: 1.5rem;
-  background: #d3d3d3;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(255, 251, 251, 0.1);
+
+/* === Efeito hover no botão === */
+.btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* === Botão de WhatsApp flutuante === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 999;
+  font-size: 24px;
   text-align: center;
-  min-height: 150px;
-  transition: opacity 0.5s ease;
+  text-decoration: none;
 }
-.avaliacao span {
-  display: block;
-  margin-top: 1rem;
-  color: #424242;
-  font-weight: bold;
+
+/* === Rodapé personalizado === */
+footer {
+  background: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
 }
-eight: bold;
+
+footer p {
+  margin: 0.5rem 0;
 }
