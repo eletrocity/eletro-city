@@ -30,99 +30,50 @@
     </div>
   </section>
 
-  <section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>Somos uma empresa especializada na prestação de serviços elétricos, comprometida com a excelência, segurança e eficiência em cada projeto. Atuamos com soluções inteligentes para instalações, manutenções e adequações elétricas, sempre prezando pela qualidade dos materiais, mão de obra qualificada e garantia nos serviços realizados. Nosso objetivo é proporcionar tranquilidade e confiança aos nossos clientes, entregando resultados com alto padrão técnico e dentro dos prazos estabelecidos.</p>
-  </section>
-
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/Variacao.png" alt="Instalação elétrica">
-        <h3>Instalações</h3>
-      </div>
-      <div class="card">
-        <img src="images/Variacao.png" alt="Manutenção elétrica">
-        <h3>Manutenção</h3>
-      </div>
-    </div>
-  </section>
-
-  
-<section id="feedback">
-  <h2>O que dizem nossos clientes</h2>
-  <div class="carrossel" id="carrossel">
-    <div class="avaliacao">
-      <p>“Um ótimo profissional, serviço de qualidade... Parabéns pelo trabalho 👏🏼👏🏼”</p>
-      <span>— Érica Lorrana</span>
-    </div>
-    <div class="avaliacao">
-      <p>“Super indico, um profissional excelente, muito honesto uma pessoa maravilhosa!!! Indico demais!!!!”</p>
-      <span>— Gabriela De Sa</span>
-    </div>
-    <div class="avaliacao">
-      <p>“Profissional comprometido, de extrema confiança e com um trabalho impecável! Dá segurança ter alguém tão responsável e caprichoso cuidando da parte elétrica. Recomendo.”</p>
-      <span>— Mimi G</span>
-    </div>
-  </div>
-  <a href="https://www.google.com/search?sca_esv=ea95677d27d0a3ef&rlz=1C1CHZN_pt-BRBR1098BR1098&sxsrf=AE3TifPP9fh-fBEVySJHE17A0yPYTMhiBg:1753474435139&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EyseZJ0ZJyy6VdXs_SPOZl3XwZyf3rDFG8dLVvpxjIpIS0UFYodigMFR7o0ZjO-sKs_MZNye3q9mMNAcX1KWVkQaUVSRXCM_68rbNbGn2LLOPOG48YnjRmth5yLyI9sF44p-M8U%3D&q=ELETROCITY+-+SERVI%C3%87OS+EL%C3%89TRICOS+Coment%C3%A1rios&sa=X&ved=2ahUKEwjK89Cm6diOAxXMO7kGHe77ImkQ0bkNegQIMRAD&biw=1920&bih=919&dpr=1" target="_blank" class="btn-segundo">
-    Ver mais avaliações no Google
-  </a>
-</section>
-
-
-  <section id="fotos">
-    <h2>Galeria de Fotos</h2>
-    <div class="galeria">
-      <img src="images/foto-galeria1.jpg" alt="Projeto 1">
-      <img src="images/foto-galeria2.jpg" alt="Projeto 2">
-      <img src="images/foto-galeria3.jpg" alt="Projeto 3">
-    </div>
-  </section>
-
-  <section id="artigos">
-    <h2>Últimos Artigos</h2>
-    <div class="artigos-lista">
-      <article>
-        <img src="images/artigo1.jpg" alt="Dicas de segurança elétrica">
-        <h3>Dicas de segurança em instalações</h3>
-        <p>Conselhos práticos para evitar acidentes domésticos e comerciais.</p>
-        <a href="#">Leia mais →</a>
-      </article>
-    </div>
-  </section>
-
   <section id="contato">
     <h2>Contato</h2>
-    <form action="#" method="post">
+    <form onsubmit="enviarFormulario(event)">
       <input type="text" name="nome" placeholder="Seu nome" required>
       <input type="email" name="email" placeholder="Seu e-mail" required>
       <textarea name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
       <button type="submit">Enviar Mensagem</button>
     </form>
-    <a href="https://wa.me/+5562996151938" class="whatsapp-btn" target="_blank">
-      Fale pelo WhatsApp
-    </a>
   </section>
+
+  <a class="whatsapp-float" href="https://wa.me/5562996151938" target="_blank" title="Fale no WhatsApp">💬</a>
 
   <footer>
     <p>© 2025 Eletro City • Todos os direitos reservados</p>
+    <p>Email: eletrocityservicoseletricos@gmail.com</p>
+    <p>WhatsApp: (62) 99615-1938</p>
+    <p>Instagram: <a href="https://instagram.com/seuinstagram" style="color: #ffdd00;">@seuinstagram</a></p>
   </footer>
 
+  <script>
+    const avaliacoes = document.querySelectorAll(".avaliacao");
+    let index = 0;
+    function mostrarProximaAvaliacao() {
+      avaliacoes.forEach((el, i) => {
+        el.style.display = (i === index) ? "block" : "none";
+      });
+      index = (index + 1) % avaliacoes.length;
+    }
+    mostrarProximaAvaliacao();
+    setInterval(mostrarProximaAvaliacao, 4000);
 
-<script>
-  const avaliacoes = document.querySelectorAll(".avaliacao");
-  let index = 0;
-  function mostrarProximaAvaliacao() {
-    avaliacoes.forEach((el, i) => {
-      el.style.display = (i === index) ? "block" : "none";
-    });
-    index = (index + 1) % avaliacoes.length;
-  }
-  mostrarProximaAvaliacao(); 
-  setInterval(mostrarProximaAvaliacao, 4000);
-</script>
+    function enviarFormulario(event) {
+      event.preventDefault();
+      const nome = document.querySelector('input[name="nome"]').value;
+      const email = document.querySelector('input[name="email"]').value;
+      const mensagem = document.querySelector('textarea[name="mensagem"]').value;
+
+      const mailto = `mailto:eletrocityservicoseletricos@gmail.com?subject=Solicitação de Orçamento - ${nome}&body=Nome: ${nome}%0DE-mail: ${email}%0DMensagem:%0D${mensagem}`;
+      window.location.href = mailto;
+
+      const textoWhatsApp = `Olá, me chamo ${nome}.%0DMeu e-mail: ${email}.%0D${mensagem}`;
+      window.open(`https://wa.me/5562996151938?text=${encodeURIComponent(textoWhatsApp)}`, '_blank');
+    }
+  </script>
 
 </body>
 </html>
